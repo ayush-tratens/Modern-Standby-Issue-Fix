@@ -43,9 +43,58 @@ Set value to: `0`
 - System behaves as expected with power settings
 - Issue resolved permanently
 
-// Credits
+// or use Reg File Directly
+How to Use the `.reg` File to Disable Modern Standby (S0)
+
+This `.reg` file will automatically apply the necessary registry tweak to **disable Modern Standby (S0 Low Power Idle) a feature that may cause random black screens, sleep, or lock issues on laptops like the HP Victus.
+
+Steps to Apply:
+
+1. Download the file:
+   `Disable_Modern_Standby.reg`
+
+2. Right-click the file → Select "Run as administrator"
+
+3. If prompted by User Account Control (UAC), click Yes
+
+4. You’ll see a message:
+   “Are you sure you want to continue?” → Click Yes
+
+5. Then:
+   “The keys and values have been successfully added.” → Click OK
+6. Reboot your laptop
+
+7. After reboot, open Command Prompt and type:
+
+   powercfg /a
+   If you no longer see
+   Standby (S0 Low Power Idle)
+   the tweak worked!
+
+//To Undo the Change:
+
+If you want to re-enable Modern Standby, you can:
+
+* Delete the registry key manually from:
+
+  
+  HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PlatformAoAcOverride
+  
+
+// Note:
+
+* This tweak is safe and reversible
+* It forces Windows to use traditional sleep states (S3), which are more stable on gaming laptops
+* It doesn't affect system performance or battery usage in a harmful way
+
+
+
+
+// Credits //
 
 Shared by ayush-tratens(https://github.com/ayush-tratens)
+
+
 
 
 
